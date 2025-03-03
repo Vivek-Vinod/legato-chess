@@ -40,3 +40,84 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Enhanced chess-specific styles */
+button, select {
+  transition: all 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus, select:focus {
+  outline: 2px solid rgba(79, 70, 229, 0.3);
+  outline-offset: 2px;
+}
+
+/* Improved select dropdown */
+select {
+  background-color: white;
+  background-image: none;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+select:hover {
+  border-color: #9ca3af;
+}
+
+/* Custom dropdown styling */
+select option {
+  padding: 10px;
+  font-weight: 500;
+}
+
+/* Improve the board appearance */
+#MainBoard {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* When pieces become draggable */
+.draggable-piece:hover {
+  cursor: pointer;
+}
+
+/* Pulse animation for waiting status */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Logo styling */
+nav img {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
