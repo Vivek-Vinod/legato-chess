@@ -1,141 +1,105 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <!-- Enhanced gradients -->
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc" />
-      <stop offset="50%" stop-color="#f1f5f9" />
-      <stop offset="100%" stop-color="#e2e8f0" />
+    <!-- Enhanced brighter wooden texture for better visibility on dark background -->
+    <linearGradient id="lightWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0a74d" />
+      <stop offset="40%" stop-color="#f3c078" />
+      <stop offset="70%" stop-color="#e5b265" />
+      <stop offset="100%" stop-color="#d4a055" />
     </linearGradient>
-    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b45309" />
-      <stop offset="50%" stop-color="#d97706" />
-      <stop offset="100%" stop-color="#92400e" />
+    
+    <!-- More brown-toned gradient for the knight -->
+    <linearGradient id="woodBrown" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#b37e45" />
+      <stop offset="50%" stop-color="#a06828" />
+      <stop offset="100%" stop-color="#8c5e2a" />
     </linearGradient>
-    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fbbf24" />
-      <stop offset="50%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#d97706" />
+    
+    <!-- Slightly darker gold accent gradient -->
+    <linearGradient id="goldAccent" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#e8c000" />
+      <stop offset="50%" stop-color="#d9a424" />
+      <stop offset="100%" stop-color="#c88a35" />
     </linearGradient>
-    <linearGradient id="textBgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
+    
+    <!-- Subtle dark background gradient -->
+    <linearGradient id="subtleDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#374151" />
     </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-opacity="0.2" />
+    
+    <!-- Enhanced wood grain texture filter -->
+    <filter id="woodTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" seed="5" />
+      <feDisplacementMap in="SourceGraphic" scale="2" />
     </filter>
-    <filter id="pieceGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#b45309" flood-opacity="0.3" />
-    </filter>
-    <filter id="textGlow" x="-10%" y="-10%" width="120%" height="140%">
-      <feFlood flood-color="#fcd34d" flood-opacity="0.4" result="flood" />
-      <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask" />
-      <feGaussianBlur in="mask" stdDeviation="0.8" result="blur" />
+    
+    <!-- Glow filter for knight -->
+    <filter id="knightGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="softShadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.25" />
     </filter>
   </defs>
 
-  <!-- Main background with outer glow -->
-  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" filter="url(#softShadow)" />
-  <circle cx="256" cy="256" r="236" fill="url(#bgGradient)" stroke="url(#goldGradient)" stroke-width="4" />
+  <!-- Enhanced background with better contrast -->
+  <circle cx="256" cy="256" r="250" fill="white" filter="url(#softShadow)" />
+  <circle cx="256" cy="256" r="244" fill="url(#subtleDark)" />
   
-  <!-- Decorative gold rings -->
-  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#goldGradient)" stroke-width="1" stroke-opacity="0.4" />
-  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#goldGradient)" stroke-width="0.5" stroke-opacity="0.3" />
-  
-  <!-- Enhanced chess board pattern -->
+  <!-- Background decorative elements with improved contrast for dark background -->
   <g opacity="0.2">
-    <rect x="150" y="110" width="212" height="212" rx="4" fill="#0f172a" stroke="#0f172a" stroke-width="1" />
-    
-    <!-- Light squares - 8x8 proper board -->
-    <!-- Row 1 -->
-    <rect x="150" y="110" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="203" y="110" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="256" y="110" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="309" y="110" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 2 -->
-    <rect x="176.5" y="136.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="229.5" y="136.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="282.5" y="136.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="335.5" y="136.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 3 -->
-    <rect x="150" y="163" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="203" y="163" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="256" y="163" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="309" y="163" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 4 -->
-    <rect x="176.5" y="189.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="229.5" y="189.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="282.5" y="189.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="335.5" y="189.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 5 -->
-    <rect x="150" y="216" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="203" y="216" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="256" y="216" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="309" y="216" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 6 -->
-    <rect x="176.5" y="242.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="229.5" y="242.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="282.5" y="242.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="335.5" y="242.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 7 -->
-    <rect x="150" y="269" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="203" y="269" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="256" y="269" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="309" y="269" width="26.5" height="26.5" fill="#f1f5f9" />
-    
-    <!-- Row 8 -->
-    <rect x="176.5" y="295.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="229.5" y="295.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="282.5" y="295.5" width="26.5" height="26.5" fill="#f1f5f9" />
-    <rect x="335.5" y="295.5" width="26.5" height="26.5" fill="#f1f5f9" />
+    <circle cx="256" cy="256" r="180" stroke="#e0e0e0" stroke-width="1" fill="none" />
+    <circle cx="256" cy="256" r="150" stroke="#e0e0e0" stroke-width="0.5" fill="none" />
+    <path d="M156 256h200" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="4 4" />
+    <path d="M256 156v200" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="4 4" />
   </g>
   
-  <!-- Elegant King chess piece with better detailing -->
-  <g filter="url(#pieceGlow)" transform="translate(256, 250) scale(2.2)">
-    <!-- Base -->
-    <path d="M-22,40 L22,40 L20,32 L-20,32" 
-          fill="url(#goldGradient)" stroke="#78350f" stroke-width="1" />
-    
-    <!-- Stem with enhanced detailing -->
-    <path d="M-16,32 L-16,10 C-16,6 -13,6 -13,3 C-13,0 -10,0 -10,-3 L-10,-18 
-             L-6,-18 L-6,-24 L6,-24 L6,-18 L10,-18 L10,-3 
-             C10,0 13,0 13,3 C13,6 16,6 16,10 L16,32" 
-          fill="url(#goldGradient)" stroke="#78350f" stroke-width="1" />
-    
-    <!-- Embellishments on the stem -->
-    <path d="M-16,25 L16,25 M-16,18 L16,18" stroke="#78350f" stroke-width="0.5" stroke-opacity="0.7" />
-    
-    <!-- Cross with enhanced appearance -->
-    <path d="M0,-30 L0,-42 M-6,-36 L6,-36" 
-          fill="none" stroke="#78350f" stroke-width="2" stroke-linecap="round" />
-    
-    <!-- Subtle highlight -->
-    <path d="M-15,33 L15,33" stroke="#fcd34d" stroke-width="0.7" stroke-opacity="0.6" />
+  <!-- Extra decorative element with adjusted color for dark background -->
+  <path d="M155,380 Q256,350 357,380" stroke="#d4a76a" stroke-width="1.5" opacity="0.3" fill="none" />
+
+  <!-- Wooden knight piece with more brown-toned colors -->
+  <g filter="url(#softShadow)">
+    <!-- Shadow layer -->
+    <text x="235" y="303" 
+          text-anchor="middle" 
+          font-size="300" 
+          font-family="Arial"
+          fill="rgba(0,0,0,0.35)"
+          style="transform-origin: center; transform: scale(1.1, 1);">♞</text>
+          
+    <!-- Main wooden knight -->
+    <text x="235" y="300" 
+          text-anchor="middle" 
+          font-size="300" 
+          font-family="Arial"
+          fill="url(#woodBrown)"
+          filter="url(#woodTexture)"
+          style="transform-origin: center; transform: scale(1.1, 1);">♞</text>
+          
+    <!-- Highlight layer - adjusted to match brown tones -->
+    <text x="235" y="297" 
+          text-anchor="middle" 
+          font-size="300" 
+          font-family="Arial"
+          fill="#e8d0b0"
+          opacity="0.35"
+          style="transform-origin: center; transform: scale(1.1, 1);"
+          filter="url(#knightGlow)">♞</text>
   </g>
-  
-  <!-- Enhanced text banner -->
-  <path d="M76,380 Q76,368 88,368 H424 Q436,368 436,380 V440 Q436,452 424,452 H88 Q76,452 76,440 Z" 
-        fill="url(#textBgGradient)" filter="url(#softShadow)" />
-  <path d="M80,384 Q80,372 92,372 H420 Q432,372 432,384 V436 Q432,448 420,448 H92 Q80,448 80,436 Z" 
-        fill="none" stroke="url(#goldGradient)" stroke-width="2" />
-  
-  <!-- Enhanced app name with better typography -->
-  <text x="256" y="420" font-family="'Trajan Pro', 'Cinzel', serif" font-size="40" 
-        font-weight="600" letter-spacing="3" text-anchor="middle" fill="#ffffff" filter="url(#textGlow)">
-    LEGATO CHESS
-  </text>
-  
-  <!-- Gold accent lines -->
-  <path d="M120,426 L392,426" stroke="url(#goldAccent)" stroke-width="1.5" stroke-opacity="0.5" />
-  
-  <!-- Top decorative elements -->
-  <circle cx="256" cy="65" r="8" fill="url(#goldGradient)" />
-  <path d="M140,65 L220,65" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" />
-  <path d="M292,65 L372,65" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" />
+
+  <!-- App name on one line with brightened text for dark background -->
+  <g transform="translate(0, 420)">
+    <text x="256" y="0" 
+          text-anchor="middle" 
+          font-family="Arial, sans-serif"
+          font-size="42" 
+          font-weight="800">
+      <tspan fill="#4f83cc">Legato</tspan>
+      <tspan fill="#e0e0e0" font-weight="600" font-size="38">Chess</tspan>
+    </text>
+  </g>
 </svg>
